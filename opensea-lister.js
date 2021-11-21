@@ -9,11 +9,11 @@ const Web3ProviderEngine = require("web3-provider-engine");
 const MNEMONIC = "XXX"; // add your wallet mnemonic - DO NOT SHRE THIS WITH ANYONE
 const NODE_API_KEY = "XXX"; // this is your node's API key. node providers i.e. infura, alchemy
 const isInfura = false; // if you are using infura, change this to true. if not, leave false
-const FACTORY_CONTRACT_ADDRESS = process.env.FACTORY_CONTRACT_ADDRESS;
+// const FACTORY_CONTRACT_ADDRESS = process.env.FACTORY_CONTRACT_ADDRESS;
 const NFT_CONTRACT_ADDRESS = "XXX"; // this is your NFT's contract address
-const OWNER_ADDRESS = ""; // this is the address of the NFT contract's owner. should be your wallet address
+const OWNER_ADDRESS = "XXX"; // this is the address of the NFT contract's owner. should be your wallet address
 const NETWORK = "Rinkeby"; // this is the network you deploy on. rinkeby for rinkeby, mainnet for mainnet
-const API_KEY = ""; // this is optional. if you are sending a larger volume of requests, OpenSea will throttle your code unless you have an API key from OpenSea
+const API_KEY = "XXX"; // this is optional. if you are sending a larger volume of requests, OpenSea will throttle your code unless you have an API key from OpenSea
 
 if (!MNEMONIC || !NODE_API_KEY || !NETWORK || !OWNER_ADDRESS) {
   console.error(
@@ -71,8 +71,7 @@ async function main() {
     },
     startAmount: 0.001, // amount in ETH, NOT wei
     expirationTime: 0, // set this if you would like your auction to expire at a certain time
-    listingTime: 1636833600, // set a listing time, in seconds. I would use this website: https://www.epochconverter.com/
-    // the example listing time translates to 11/05/2021 7:00 PM GMT 
+    listingTime: 0, // set a listing time, in seconds. I would use this website: https://www.epochconverter.com/
     accountAddress: OWNER_ADDRESS,
   });
   console.log(
